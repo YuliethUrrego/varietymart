@@ -1,0 +1,91 @@
+.perfil {
+    text-align: center;
+  }
+
+  /* Resetear los márgenes y el relleno por defecto de la página */
+body, h1, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el fondo de la página */
+body {
+    background-color: #dee7df;
+    font-family: Arial, sans-serif;
+}
+
+form{
+    background-color: #fff;
+    margin: 7em auto 3em auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 3.5em 3em;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 10px --5px rgba(0 0 0 /30%);
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    margin-top: 1em;
+    display: grid;
+    gap: 2em;
+
+}
+
+.form_eliminar {
+    margin: 2em auto 3em auto;
+    width: 400px;
+    display: grid;
+}
+
+.form__input{
+    width: 100%;
+    background: none;
+    color: #706c6c;
+    font-size: 1rem;
+    border-bottom: 1px solid #5757577e;
+    font-family: 'Roboto', sans-serif;
+    padding: .6em .3em;
+    border:  1px #5757577e;
+}
+
+::placeholder {
+    color: gray;
+    font-size: 1.2em;
+  }
+
+option{
+    color: gray;
+    font-size: 1.2em;
+}
+
+.boton{
+    background-color: rgb(93, 193, 93);
+    color: #fff;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+.boton_eliminar{
+    background-color: rgb(212, 46, 46);
+    color: #fff;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+.form__volver{
+    background-color: rgb(211, 188, 112);
+    color: #fff;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+}

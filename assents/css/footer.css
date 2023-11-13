@@ -1,0 +1,96 @@
+/* Estilo para el footer */
+.footer {
+    background-color:  rgb(93, 193, 93);
+    color: #fff;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: relative; 
+    bottom: 0; /* Alinea el footer en la parte inferior */
+    z-index: 1;
+}
+
+.footer2 {
+    background-color:  rgb(93, 193, 93);
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: relative; 
+    bottom: 0; /* Alinea el footer en la parte inferior */
+    z-index: 1;
+}
+/* Estilo para cada sección del footer */
+.footer-section {
+    padding: 20px;
+    text-align: left;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.footer-section {
+    padding: 20px;
+    text-align: left;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+.footer-section h1 {
+    font-size: 1.2rem;
+    color:  rgb(14, 12, 12);
+    font-size: 20px;
+}
+.footer-section p {
+    background-color: rgb(93, 193, 93);
+    margin-top: 10px;
+    color:  rgb(15, 15, 15);
+    font-size: 15px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin: 3px 0;
+    font-size: 17px;
+}
+.footer-section ul li a {
+    background-color: rgb(93, 193, 93);
+    text-decoration: none;
+}
+.footer-section.social img {
+    height: 30px;
+    margin-right: 10px;
+}
+.footer-bottom {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 14px 0;
+    background-color: rgb(93, 193, 93);
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    footer {
+        position: relative;
+        margin-top: 20px;
+        flex-direction: column; /* Cambiar a disposición vertical */
+        z-index: -1;
+    }
+
+    .footer-section {
+        flex: none; /* Evitar que las secciones ocupen todo el ancho */
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+    }
+}
+
+
+
+
+

@@ -1,0 +1,80 @@
+body {
+    text-align: center;
+}
+
+
+h1 {
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+}
+
+th {
+    background-color: #ffffff;
+}
+
+.container {
+    margin-top: 8em;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Esto ocupa toda la altura de la ventana gráfica del navegador */
+}
+
+.acciones{
+    display: flex;
+    justify-content: center;
+    border: 0px;
+}
+
+.agregar {
+    width: 85%;
+    margin: 30px 0;
+    display: flex;
+    justify-content: end;
+}
+
+.edit-button {
+    background-color: #ebc035;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+}
+.edit-delete {
+    cursor: pointer;
+    background-color: #ff0000;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    border: 0px;
+}
+.edit-add {
+    background-color: #20c43b;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+}
+
