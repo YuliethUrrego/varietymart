@@ -94,6 +94,19 @@ Class ControlUsuarios{
         
     
     }
+
+    function consultarTodos(){
+
+        $comandoSql="select *, case when sexo = 1 then 'Femenimo' when sexo = 2 then 'Masculino' when sexo = 3 then 'Otro' end as sexoDec, case when rol = 0 then 'Administrador' when rol = 1 then 'Editor' when rol = 2 then 'Consulta' end as rolDec from usuarios";
+        $objControlConexion=new ControlConexion();
+        $objControlConexion->abrirBd("localhost", "root", "","varietymart");
+
+        $recordSet=$objControlConexion->ejecutarSelect($comandoSql);
+
+        return $recordSet;//->fetch_array(MYSQLI_BOTH);
+        
+    
+    }
     
     function IngresoUsuarios(){
         
@@ -115,7 +128,7 @@ Class ControlUsuarios{
              $_SESSION["iniciarSesion"] = "ok";
              $_SESSION["codigoUsuario"] = $row["codigo"];
              $_SESSION["rolUsuario"] = $row["rol"];
-             
+
             //redirreccionar al incio
            echo '
             <script>

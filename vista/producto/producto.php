@@ -43,7 +43,8 @@ if (file_exists($rutaHeader)) {
 
         <h1 class="subtitulo">Productos</h1>';
 
-        if($_SESSION["rolUsuario"] == 0){
+        // Si el usuariuo es Administrador (0) o Editor (1) puede agregar productos
+        if($_SESSION["rolUsuario"] == 0 || $_SESSION["rolUsuario"] == 1){
             echo '<div class="agregar">
                     <a href="../producto/agregarproducto.php" class="edit-add">Agregar Producto</a>
                 </div>';
@@ -54,7 +55,8 @@ if (file_exists($rutaHeader)) {
 
            echo ' <div class="contenedor">
                     <img class="imagen" src="data:image/jpg;base64, '.base64_encode($row["imagen"]).'" alt="">';
-                    if($_SESSION["rolUsuario"] == 0){
+                    // Si el usuariuo es Administrador (0) o Editor (1) puede editar y eliminar productos
+                    if($_SESSION["rolUsuario"] == 0 || $_SESSION["rolUsuario"] == 1){
                         echo '<div class="acciones">
                         <a href="editarproducto.php?codigo='.$row["codigo"].'" class="edit-button">Editar</a>
                         <a href="procesarEliminarproducto.php?codigo='.$row["codigo"].'" class="edit-delete"">Eliminar</a>

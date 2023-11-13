@@ -15,9 +15,16 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
             <h1>Enlaces rápidos</h1>
             <ul>
                 <li><a href="../producto/producto.php">Productos</a></li>';
-                if($_SESSION["rolUsuario"] == 0){
-                    echo '<li><a href="../proveedor/proveedor.php">Proveedores</a></li>';
-                }
+
+            // Si el usuario es administradior (0) puede gestionar proveedores y usuarios
+            if($_SESSION["rolUsuario"] == 0){
+                echo '<li> <a href="../proveedor/proveedor.php">Proveedores</a></li>
+                <li> <a href="../usuario/usuario.php">Usuarios</a></li>';
+            }
+            // Si el usuario es Editor(1)  puede gestionar proveedores
+            else if($_SESSION["rolUsuario"] == 1){
+                echo '<li> <a href="../proveedor/proveedor.php">Proveedores</a></li>';
+            }      
                 echo '<li><a href="../usuario/perfil.php">Perfil</a></li>
                 <li> <a href="../../index.php">Cerrar Sesión</a></li>
             </ul>

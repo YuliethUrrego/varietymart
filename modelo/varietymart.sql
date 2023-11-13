@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2023 a las 03:05:38
+-- Tiempo de generación: 13-11-2023 a las 03:57:35
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -77,8 +77,7 @@ INSERT INTO `proveedores` (`codigo`, `identificacion`, `nombre`, `ciudad`, `dire
 (11, 758349753, 'Pesis SAS', 'Bogotá', 'Cra 149 N 63-115', '31970689076', 'pepsi@hotmail.com'),
 (15, 321645135, 'Moderna Panaderia', 'Medellin', 'Cra 149 N 63-115', '3124567845', 'moderna@hotmail.com'),
 (16, 3414427, 'Pan Burger', 'Medellin', 'Cra 149 N 63-115', '3247685', 'pan@hotmail.com'),
-(18, 1027740002, 'Prueba Proveedor', 'Medallo papá', '', '', ''),
-(20, 5435635, 'Otro proveedor', '', '', '', '');
+(18, 1027740002, 'Prueba Proveedor', 'Medallo papá', '', '', '');
 
 -- --------------------------------------------------------
 
