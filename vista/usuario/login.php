@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once '../../modelo/ModeloUsuarios.php';
 require_once '../../controlador/ControlUsuarios.php';
 require_once '../../controlador/ControlConexion.php';

@@ -144,11 +144,14 @@ if (file_exists($rutaHeader)) {
     
         </div>  
 
-    </form>
-
-    <form class="form_eliminar" action="" method="POST">
-    <input type="submit" class="boton_eliminar" name="btnEliminar" value="Eliminar Perfil">
     </form>';
+    
+    if($_SESSION["rolUsuario"] != 0){
+        echo '<form class="form_eliminar" action="" method="POST">
+                <input type="submit" class="boton_eliminar" name="btnEliminar" value="Eliminar Perfil">
+            </form>';
+    }
+    
 
     if (file_exists($rutaFooter)) {
         include $rutaFooter;

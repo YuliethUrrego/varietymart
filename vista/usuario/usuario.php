@@ -11,7 +11,7 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && $_
     //para que no se muestre posibles advertencias o errores (eliminar para hacer pruebas)
     error_reporting(0);
 
-    
+
     $rutaFooter = "../layout/footer2.php";
     $rutaHeader = "../layout/header2.php";
 
@@ -87,12 +87,12 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && $_
                 //Cuando el Usuario es Editor y está Inactivo
                 else if($row["rol"] == 1 && $row["estado"] == 1){
                     echo '<td> <a href="cambiarRolEstado.php?rol='.$row["rol"].'&codigo='.$row["codigo"].'" class="editor-button">'.$row["rolDec"].'</a></td>
-                    <td> <a href="cambiarRolEstado.php?estado='.$row["estado"].'&codigo='.$row["codigo"].'" class="Inactivo-button">'.$row["estadoDec"].'</a></td>';
+                    <td> <a href="cambiarRolEstado.php?estado='.$row["estado"].'&codigo='.$row["codigo"].'" class="inactivo-button">'.$row["estadoDec"].'</a></td>';
                 }
                 //Cuando el Usuario es de Consulta y está Inactivo
                 else if($row["rol"] == 2 && $row["estado"] == 1){
                     echo '<td> <a href="cambiarRolEstado.php?rol='.$row["rol"].'&codigo='.$row["codigo"].'" class="consulta-button">'.$row["rolDec"].'</a></td>
-                    <td> <a href="cambiarRolEstado.php?estado='.$row["estado"].'&codigo='.$row["codigo"].'" class="Inactivo-button">'.$row["estadoDec"].'</a></td>';
+                    <td> <a href="cambiarRolEstado.php?estado='.$row["estado"].'&codigo='.$row["codigo"].'" class="inactivo-button">'.$row["estadoDec"].'</a></td>';
                 }
 
                 echo '</td>
