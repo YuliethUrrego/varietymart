@@ -41,23 +41,27 @@ if (file_exists($rutaHeader)) {
     
     echo '<div class="contenido-principal">
 
-        <h1 class="subtitulo">Productos</h1>
+        <h1 class="subtitulo">Productos</h1>';
 
-        <div class="agregar">
-            <a href="../producto/agregarproducto.php" class="edit-add">Agregar Producto</a>
-        </div>
-
-        <div class="contenedor-imagenes">';
+        if($_SESSION["rolUsuario"] == 0){
+            echo '<div class="agregar">
+                    <a href="../producto/agregarproducto.php" class="edit-add">Agregar Producto</a>
+                </div>';
+        }
+        echo '<div class="contenedor-imagenes">';
 
         while($row = $datos->fetch_assoc()){
 
            echo ' <div class="contenedor">
-                    <img class="imagen" src="data:image/jpg;base64, '.base64_encode($row["imagen"]).'" alt="">
-                    <div class="acciones">
+                    <img class="imagen" src="data:image/jpg;base64, '.base64_encode($row["imagen"]).'" alt="">';
+                    if($_SESSION["rolUsuario"] == 0){
+                        echo '<div class="acciones">
                         <a href="editarproducto.php?codigo='.$row["codigo"].'" class="edit-button">Editar</a>
                         <a href="procesarEliminarproducto.php?codigo='.$row["codigo"].'" class="edit-delete"">Eliminar</a>
-                    </div>
-                    <div class="informacion-imagenes">
+                        </div>';
+                    }
+                    
+                    echo '<div class="informacion-imagenes">
                         <p> Nombre: '.$row["nombre"].'</p>
                         <p> Valor: $ '.$row["valor"].'</p>
                         <p> Cantidad: '.$row["cantidad"].' </p>

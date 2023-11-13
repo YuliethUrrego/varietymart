@@ -114,6 +114,8 @@ Class ControlUsuarios{
             //Crea la variable de sesión
              $_SESSION["iniciarSesion"] = "ok";
              $_SESSION["codigoUsuario"] = $row["codigo"];
+             $_SESSION["rolUsuario"] = $row["rol"];
+             
             //redirreccionar al incio
            echo '
             <script>

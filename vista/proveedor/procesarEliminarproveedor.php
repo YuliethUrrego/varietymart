@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 // Ingresa al sistema cuandoe exista variable de sesion activa
-if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
+if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && $_SESSION["rolUsuario"] == 0){
      
     require_once '../../modelo/ModeloProveedores.php';
     require_once '../../controlador/ControlProveedores.php';

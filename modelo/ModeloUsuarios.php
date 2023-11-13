@@ -9,9 +9,10 @@
         var $contrasena;
         var $ciudad;
 		var $sexo;
+		var $rol;
 
 
-		function __construct($codigo, $nombre, $apellido, $cedula, $correo, $contrasena, $ciudad, $sexo){
+		function __construct($codigo, $nombre, $apellido, $cedula, $correo, $contrasena, $ciudad, $sexo, $rol){
 			$this->codigo=$codigo;
 			$this->nombre=$nombre;
 			$this->apellido=$apellido;
@@ -20,6 +21,7 @@
             $this->contrasena=$contrasena;
             $this->ciudad=$ciudad;
 			$this->sexo=$sexo;
+			$this->rol=$rol;
 		}
 
 		function setcodigo($codigo){
@@ -76,6 +78,13 @@
 		}
 		function getsexo(){
 			return $this->sexo;
+        }
+
+		function setrol($rol){
+			$this->rol=$rol;
+		}
+		function getrol(){
+			return $this->rol;
         }
 
 		

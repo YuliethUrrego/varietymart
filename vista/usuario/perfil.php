@@ -20,7 +20,7 @@ require_once '../../controlador/ControlUsuarios.php';
 require_once '../../controlador/ControlConexion.php';
 
 // Se consultan los datos para visualizarlo al ingresar al perfil
-$objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "");
+$objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "", "");
 $objControlUsuario = new ControlUsuarios($objModeloUsuario);
 $datos = $objControlUsuario  -> consultar();
 
@@ -34,12 +34,12 @@ if(isset($_POST["btnEditar"]) && isset($_POST["txtNombre"]) && isset($_POST["txt
     $sexo = $_POST["txtSexo"];
 
     //Editamos
-    $objModeloUsuario = new ModeloUsuarios($codigo, $nombre, $apellido, "", "", $contrasena, $ciudad, $sexo);
+    $objModeloUsuario = new ModeloUsuarios($codigo, $nombre, $apellido, "", "", $contrasena, $ciudad, $sexo, "");
     $objControlUsuario = new ControlUsuarios($objModeloUsuario);
     $objControlUsuario  -> editar();
 
     //Consultamos nuevamente los datos para que se refresque
-    $objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "");
+    $objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "", "");
     $objControlUsuario = new ControlUsuarios($objModeloUsuario);
     $datos = $objControlUsuario  -> consultar();
 
@@ -48,7 +48,7 @@ if(isset($_POST["btnEditar"]) && isset($_POST["txtNombre"]) && isset($_POST["txt
 //Para eliminar
 if(isset($_POST["btnEliminar"])){
 
-    $objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "");
+    $objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "", "");
     $objControlUsuario = new ControlUsuarios($objModeloUsuario);
     $objControlUsuario  -> borrar(); 
 

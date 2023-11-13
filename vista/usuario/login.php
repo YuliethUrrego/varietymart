@@ -9,7 +9,7 @@ if(isset($_POST["btnIngresar"]) && isset($_POST["txtCorreo"]) && isset($_POST["t
     $correo = $_POST["txtCorreo"];
     $contrasena = $_POST["txtContrasena"];
 
-    $objModeloUsuario = new ModeloUsuarios("", "", "", "", $correo, $contrasena, "", "");
+    $objModeloUsuario = new ModeloUsuarios("", "", "", "", $correo, $contrasena, "", "", "");
     $objControlUsuario = new ControlUsuarios($objModeloUsuario);
     $objControlUsuario  -> IngresoUsuarios();
 

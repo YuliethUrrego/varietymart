@@ -12,7 +12,7 @@ if(isset($_POST["btnRegistrarse"]) && isset($_POST["txtNombre"]) && isset($_POST
     $correo = $_POST["txtCorreo"];
     $contrasena = $_POST["txtContrasena"];
 
-    $objModeloUsuario = new ModeloUsuarios("", $nombre, $apellido, $cedula, $correo, $contrasena, "", "");
+    $objModeloUsuario = new ModeloUsuarios("", $nombre, $apellido, $cedula, $correo, $contrasena, "", "", "");
     $objControlUsuario = new ControlUsuarios($objModeloUsuario);
     $objControlUsuario  -> registrar();
 
