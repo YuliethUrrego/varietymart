@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 // Ingresa al sistema cuandoe exista variable de sesion activa y el usuario sea administrador o editor
-if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && ($_SESSION["rolUsuario"] == 0 || $_SESSION["rolUsuario"] == 1)){
+if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && ($_SESSION["rolUsuario"] == 0 || $_SESSION["rolUsuario"] == 1) ){
     $rutaFooter = "../layout/footer2.php";
     $rutaHeader = "../layout/header2.php";
 

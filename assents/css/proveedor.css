@@ -77,4 +77,41 @@ th {
     font-size: 14px;
     margin: 2px;
 }
+.editor-button {
+    background-color: #ebc035;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+}
+
+.consulta-button {
+    background-color: #75c915;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+}
+.activo-button{
+    background-color: #207ac4;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+}
+.inactivo-button{
+    background-color: #c43920;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+}
 

@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Ingresa al sistema cuandoe exista variable de sesion activa
+// Ingresa al sistema cuandoe exista variable de sesion activa 
 if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
 
     //para que no se muestre posibles advertencias o errores (eliminar para hacer pruebas)
@@ -20,7 +20,7 @@ require_once '../../controlador/ControlUsuarios.php';
 require_once '../../controlador/ControlConexion.php';
 
 // Se consultan los datos para visualizarlo al ingresar al perfil
-$objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "", "");
+$objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "", "", "");
 $objControlUsuario = new ControlUsuarios($objModeloUsuario);
 $datos = $objControlUsuario  -> consultar();
 
@@ -34,12 +34,12 @@ if(isset($_POST["btnEditar"]) && isset($_POST["txtNombre"]) && isset($_POST["txt
     $sexo = $_POST["txtSexo"];
 
     //Editamos
-    $objModeloUsuario = new ModeloUsuarios($codigo, $nombre, $apellido, "", "", $contrasena, $ciudad, $sexo, "");
+    $objModeloUsuario = new ModeloUsuarios($codigo, $nombre, $apellido, "", "", $contrasena, $ciudad, $sexo, "", "");
     $objControlUsuario = new ControlUsuarios($objModeloUsuario);
     $objControlUsuario  -> editar();
 
     //Consultamos nuevamente los datos para que se refresque
-    $objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "", "");
+    $objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "", "", "");
     $objControlUsuario = new ControlUsuarios($objModeloUsuario);
     $datos = $objControlUsuario  -> consultar();
 
@@ -48,7 +48,7 @@ if(isset($_POST["btnEditar"]) && isset($_POST["txtNombre"]) && isset($_POST["txt
 //Para eliminar
 if(isset($_POST["btnEliminar"])){
 
-    $objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "", "");
+    $objModeloUsuario = new ModeloUsuarios($codigo, "", "", "", "", "", "", "", "", "");
     $objControlUsuario = new ControlUsuarios($objModeloUsuario);
     $objControlUsuario  -> borrar(); 
 
@@ -103,8 +103,8 @@ if (file_exists($rutaHeader)) {
             <div >
                 <select id="sexo" name="txtSexo" class="form__input" required>
                     <option value="">Seleccionar Género</option>
-                    <option selected value="1">Masculino</option>
-                    <option value="2">Femenino</option>
+                    <option selected value="1">Femenino</option>
+                    <option value="2">Masculino</option>
                     <option value="3">Otro</option>
                 </select>
             </div>';
@@ -113,8 +113,8 @@ if (file_exists($rutaHeader)) {
             <div >
                 <select id="sexo" name="txtSexo" class="form__input" required>
                     <option value="">Seleccionar Género</option>
-                    <option value="1">Masculino</option>
-                    <option selected value="2">Femenino</option>
+                    <option value="1">Femenino</option>
+                    <option selected value="2">Masculino</option>
                     <option value="3">Otro</option>
                 </select>
             </div>';
@@ -123,8 +123,8 @@ if (file_exists($rutaHeader)) {
             <div >
                 <select id="sexo" name="txtSexo" class="form__input" required>
                     <option value="">Seleccionar Género</option>
-                    <option value="1">Masculino</option>
-                    <option value="2">Femenino</option>
+                    <option value="1">Femenino</option>
+                    <option value="2">Masculino</option>
                     <option selected value="3">Otro</option>
                 </select>
             </div>';
@@ -133,8 +133,8 @@ if (file_exists($rutaHeader)) {
                 <div >
                     <select id="sexo" name="txtSexo" class="form__input" required>
                         <option value="">Seleccionar Género</option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
+                        <option value="1">Femenino</option>
+                        <option value="2">Masculino</option>
                         <option value="3">Otro</option>
                     </select>
                 </div>';

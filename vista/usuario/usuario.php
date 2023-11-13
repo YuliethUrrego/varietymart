@@ -8,7 +8,10 @@ if (session_status() == PHP_SESSION_NONE) {
 // Ingresa al sistema cuandoe exista variable de sesion activa y el usuario es el administrador
 if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && $_SESSION["rolUsuario"] == 0){
 
+    //para que no se muestre posibles advertencias o errores (eliminar para hacer pruebas)
+    error_reporting(0);
 
+    
     $rutaFooter = "../layout/footer2.php";
     $rutaHeader = "../layout/header2.php";
 
@@ -19,7 +22,7 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && $_
     $codigo = $_SESSION["codigoUsuario"];
 
     // Se consultan los datos para visualizarlo al ingresar a todos los usuarios excepto a si mismo
-    $objModeloUsuario = new ModeloUsuarios("", "", "", "", "", "", "", "", "");
+    $objModeloUsuario = new ModeloUsuarios("", "", "", "", "", "", "", "", "", "");
     $objControlUsuario = new ControlUsuarios($objModeloUsuario);
     $datos = $objControlUsuario  -> consultarTodos();
 
@@ -45,6 +48,7 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && $_
     echo '<div class="container">
 
         <h1>Usuarios</h1>
+        <br><br>
 
         <table>
             <tr>
@@ -55,7 +59,7 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && $_
                 <th>Ciudad</th>
                 <th>Género</th>
                 <th>Rol</th>
-                <th>Acciones</th>
+                <th>Estado</th>
             </tr>';
             while($row = $datos->fetch_assoc()){
         echo '<tr>
@@ -64,12 +68,34 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" && $_
                 <td>'.$row["cedula"].'</td>
                 <td>'.$row["correo"].'</td>
                 <td>'.$row["ciudad"].'</td>
-                <td>'.$row["sexoDec"].'</td>
-                <td>'.$row["rolDec"].'</td>
-                <td class="acciones">
-                    <a href="editarproveedor.php?codigo='.$row["codigo"].'" class="edit-button">Editar</a>
-                    <a href="procesarEliminarproveedor.php?codigo='.$row["codigo"].'" class="edit-delete">Eliminar</a>
-                </td>
+                <td>'.$row["sexoDec"].'</td>';
+                // El admin no se puede modificar a si mismo, solo le muestra su rol y estado
+                if($codigo == $row["codigo"]){
+                    echo '<td>'.$row["rolDec"].'</td>
+                            <td>'.$row["estadoDec"].'</td>';
+                }
+                // Cuando es usuario es Editor y está activo
+                else if($row["rol"] == 1  && $row["estado"] == 0){
+                    echo '<td> <a href="cambiarRolEstado.php?rol='.$row["rol"].'&codigo='.$row["codigo"].'" class="editor-button">'.$row["rolDec"].'</a></td>
+                            <td> <a href="cambiarRolEstado.php?estado='.$row["estado"].'&codigo='.$row["codigo"].'" class="activo-button">'.$row["estadoDec"].'</a></td>';
+                }
+                //Cuando el Usuario es de Consulta y está activo
+                else if($row["rol"] == 2 && $row["estado"] == 0){
+                    echo '<td> <a href="cambiarRolEstado.php?rol='.$row["rol"].'&codigo='.$row["codigo"].'" class="consulta-button">'.$row["rolDec"].'</a></td>
+                    <td> <a href="cambiarRolEstado.php?estado='.$row["estado"].'&codigo='.$row["codigo"].'" class="activo-button">'.$row["estadoDec"].'</a></td>';
+                }
+                //Cuando el Usuario es Editor y está Inactivo
+                else if($row["rol"] == 1 && $row["estado"] == 1){
+                    echo '<td> <a href="cambiarRolEstado.php?rol='.$row["rol"].'&codigo='.$row["codigo"].'" class="editor-button">'.$row["rolDec"].'</a></td>
+                    <td> <a href="cambiarRolEstado.php?estado='.$row["estado"].'&codigo='.$row["codigo"].'" class="Inactivo-button">'.$row["estadoDec"].'</a></td>';
+                }
+                //Cuando el Usuario es de Consulta y está Inactivo
+                else if($row["rol"] == 2 && $row["estado"] == 1){
+                    echo '<td> <a href="cambiarRolEstado.php?rol='.$row["rol"].'&codigo='.$row["codigo"].'" class="consulta-button">'.$row["rolDec"].'</a></td>
+                    <td> <a href="cambiarRolEstado.php?estado='.$row["estado"].'&codigo='.$row["codigo"].'" class="Inactivo-button">'.$row["estadoDec"].'</a></td>';
+                }
+
+                echo '</td>
             </tr>';
             }
             
